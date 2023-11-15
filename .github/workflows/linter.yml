@@ -1,5 +1,5 @@
 name: Linter
-on: 
+on:
   push:
     branches: [ "main" ]
 
@@ -7,11 +7,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: action/checkout@v3
+    - uses: actions/checkout@v3
 
     - name: Install pylint
       run: pip install pylint
 
     - name: Running linter.py with custom .pylintrc
-      run: python linter.py
+      run: python3 linter.py
       continue-on-error: false
